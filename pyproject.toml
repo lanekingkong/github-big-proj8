@@ -1,0 +1,28 @@
+[project]
+name = "codeguardian"
+version = "0.1.0"
+description = "AI Code Trust & Verification Platform - Multi-LLM consensus review with trust scoring"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "lanekingkong"}]
+
+dependencies = [
+    "pydantic>=2.0",
+    "click>=8.0",
+    "httpx>=0.25",
+    "rich>=13.0",
+    "pyyaml>=6.0",
+    "bandit>=1.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov>=4.0", "black>=23.0"]
+ai = ["openai>=1.0", "anthropic>=0.8"]
+
+[project.scripts]
+codeguardian = "codeguardian.cli:main"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
